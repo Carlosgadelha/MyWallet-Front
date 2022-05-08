@@ -90,5 +90,14 @@ export const Opcoes = slyled.div`
             font-size: 26px;
         }
     }
+
+    .btn-operacoes{
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+    }
 `;
 
