@@ -13,7 +13,7 @@ function Cadastrar() {
     const navigate = useNavigate();
     
     function cadastrar(){
-        axios.post("http://localhost:3000/cadastrar", {
+        axios.post("https://back-wallett.herokuapp.com/cadastrar", {
             name: nome,
             email,
             senha: password,

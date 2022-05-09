@@ -13,7 +13,7 @@ function Operacoes() {
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
     function novaOperacao(){
-        axios.post("http://localhost:3000/operacoes", {
+        axios.post("https://back-wallett.herokuapp.com/operacoes", {
             
             valor,
             descricao,

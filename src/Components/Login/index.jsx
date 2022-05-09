@@ -11,7 +11,7 @@ function Login(){
     const navigate = useNavigate();
 
     function logar(){
-        axios.post("http://localhost:3000/login", {
+        axios.post("https://back-wallett.herokuapp.com/login", {
             email,
             senha: password
         }).then(res => {
@@ -19,9 +19,10 @@ function Login(){
             localStorage.setItem('token', res.data.token);
             localStorage.setItem('name', res.data.name);
             navigate("/home");
-            alert("Login realizado com sucesso!");
         }).catch(err => {
             console.log(err);
+            setEmail("");
+            setPassword("");
             alert("Login ou senha incorretos!");
         });
     }

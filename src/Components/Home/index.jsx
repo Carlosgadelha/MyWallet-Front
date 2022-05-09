@@ -13,7 +13,7 @@ function Home() {
     const [saldo, setSaldo] = useState(0);
 
     useEffect(() => {
-        axios.get("http://localhost:3000/operacoes",{
+        axios.get("https://back-wallett.herokuapp.com/operacoes",{
             headers: {
                 "Authorization": `Bearer ${token}`
             }
