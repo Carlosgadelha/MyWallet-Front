@@ -38,18 +38,18 @@ export const Container = slyled.div`
         }
     }
 
-    
-
     .registros{
         width: 90%;
         height: 100%;
         display: flex;
+        position: relative;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: ${props => props.itens === 0 ? 'center' : ''};
         background: #FFFFFF;
         border-radius: 5px;
 
-        p{
+        .tituloNaoHaRegistro{
             font-family: 'Raleway';
             font-style: normal;
             font-weight: 400;
@@ -59,10 +59,71 @@ export const Container = slyled.div`
 
             color: #868686;
         }
+
+
+
+        .saldo{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 23px;
+            left: 5%;
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 20px;
+            color: #000000;
+            
+
+            .valorSaldo{
+                color: ${props => props.valor > 0? '#03AC00' : '#C70000'};
+            }
+        }
     }
 
 
 `;
+
+export const ConteudoRegistro = slyled.div`
+
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+
+    .infos{
+        display: flex;
+    }
+
+    p{
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        
+        
+        &:first-child{
+            color: #868686;
+            margin-right: 10px;
+        }
+    
+    }
+
+    .valor{
+        
+        color: ${props => props.tipo === 'entrada' ? '#03AC00' : '#C70000'};
+        
+    }
+
+    &:first-child{
+        margin-top: 23px;
+    } 
+
+`
+
 
 export const Opcoes = slyled.div`
     display: flex;
